@@ -20,7 +20,7 @@ export default {
   },
   methods: {
     async fetchUsers() {
-      this.heroes = await (await axios.get("http://localhost:3001/comics")).data.data.results;
+      this.heroes = await (await axios.get("http://localhost:3001/stories")).data.data.results;
     },
   },
 };

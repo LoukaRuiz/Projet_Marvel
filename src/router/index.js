@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import H from '../views/H.vue'
 import C from '../views/C.vue'
+import S from '../views/S.vue'
 
 Vue.use(VueRouter)
 
@@ -12,7 +13,12 @@ const routes = [
     component: H
   },
   {
-    path: '/about',
+    path: '/stories',
+    name: 'Home',
+    component: S
+  },
+  {
+    path: '/Comic',
     name: 'About',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
