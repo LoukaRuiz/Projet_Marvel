@@ -8,9 +8,10 @@ export default new Vuex.Store({
     marvelData: {},
   },
   mutations: {
-    addProductToOrder(state, product) {
-      state.order.push(product);
+    setMarvelData(state, newMarvelData) {
+      state.marvelData=newMarvelData;
     }
+    
   },
   actions: {
     async getAllRestaurants(context) {

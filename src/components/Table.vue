@@ -5,6 +5,7 @@
     :items="heroes"
     item-key="name"
     class="elevation-1"
+    
   ></v-data-table>
 </template>
 <script>
@@ -38,6 +39,12 @@ return store.state.marvelData;
     async fetchHeroes() {
       this.heroes = await (await axios.get("http://localhost:3001/heroes")).data.data.results;
     },
+   async redirectToDetail(hero){
+   store.commit("setMarvelData",hero)
+    router.replace("heroes")
+
+    }
   },
+  l
   }
 </script>

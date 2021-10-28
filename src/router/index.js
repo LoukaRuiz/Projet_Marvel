@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Heroes from '../views/ListesHeroes.vue'
 import Comics from '../views/ListesComics.vue'
 import Stories from '../components/Table.vue'
+import Detail from '../components/Detail.vue'
 
 Vue.use(VueRouter)
 
@@ -21,6 +22,11 @@ const routes = [
     path: '/Comic',
     name: 'Comic',
     component:Comics
+  },
+  {
+    path: '/Detail/User',
+    name: 'Detail',
+    component:Detail
   }
 ]
 
