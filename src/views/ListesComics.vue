@@ -16,10 +16,10 @@ export default {
     };
   },
   async created() {
-    await this.fetchUsers();
+    await this.fetchComics();
   },
   methods: {
-    async fetchUsers() {
+    async fetchComics() {
       this.heroes = await (await axios.get("http://localhost:3001/comics")).data.data.results;
     },
   },

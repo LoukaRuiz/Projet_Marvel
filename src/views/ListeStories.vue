@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-for="item in heroes" :key="item.id">
-      {{ item.name }}
+      {{ item.title }}
     </div>
   </div>
 </template>
@@ -16,11 +16,11 @@ export default {
     };
   },
   async created() {
-    await this.fetchUsers();
+    await this.fetchStorie();
   },
   methods: {
-    async fetchUsers() {
-      this.heroes = await (await axios.get("http://localhost:3001/heroes")).data.data.results;
+    async fetchStorie() {
+      this.heroes = await (await axios.get("http://localhost:3001/stories")).data.data.results;
     },
   },
 };

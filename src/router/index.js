@@ -1,29 +1,26 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import H from '../views/H.vue'
-import C from '../views/C.vue'
-import S from '../views/S.vue'
+import Heroes from '../views/ListesHeroes.vue'
+import Comics from '../views/ListesComics.vue'
+import Stories from '../components/Table.vue'
 
 Vue.use(VueRouter)
 
 const routes = [ 
   {
     path: '/',
-    name: 'Home',
-    component: H
+    name: 'Heroes',
+    component: Heroes
   },
   {
     path: '/stories',
-    name: 'Home',
-    component: S
+    name: 'stories',
+    component: Stories
   },
   {
     path: '/Comic',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component:C
+    name: 'Comic',
+    component:Comics
   }
 ]
 
