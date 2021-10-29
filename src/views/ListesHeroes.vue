@@ -1,36 +1,23 @@
 <template>
-  <div>
-  <table class="table table-hover">
-      <thead>
-        <tr>
-         
-          <th>
-              Name
-            </button>
-          </th>
-          <th>description</th>
-          <th>Modifer</th>
-         <th> 
-        
-          </th>
-          <th />
-          <th />
-        </tr>
-      </thead>
-      <tbody>
-        <tr
-          v-for="item in heroes" :key="item.id">
-          <td>{{ item.name }}</td>
-          <td>{{ item.description }}</td>
-          <td>{{ item.modified }}</td>
-
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    
-    </div>
-  </div>
+  <v-expansion-panels>
+    <v-expansion-panel
+       v-for="item in heroes" :key="item.id">
+      :key="i"
+    >
+      <v-expansion-panel-header>
+        {{item.name}}
+      </v-expansion-panel-header>
+      <v-expansion-panel-content
+      <v-for="stories in heroes.stories" :key="stories.id"
+      > Listes des Film
+       -{{stories.title}}
+      </v-expansion-panel-content>
+      <v-for="Comic in heroes.comic" :key="Comic.id"
+      > Listes des Comics
+       -{{Comic.title}}
+      </v-expansion-panel-content>
+    </v-expansion-panel>
+  </v-expansion-panels>
 </template>
 
 <script lang="ts">
@@ -41,9 +28,6 @@ export default {
     return {
       heroes: [],
     };
-  },
-  async created() {
-    await this.fetchHeroes();
   },
   methods: {
     async fetchHeroes() {
